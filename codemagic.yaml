@@ -1,12 +1,11 @@
 workflows:
   android-workflow:
-    name: Semestre
+    name: Android APK Build
     max_build_duration: 60
     instance_type: mac_mini_m1
     scripts:
       - name: Build Android APK
         script: | 
-          chmod +x gradlew || true
-          ./gradlew assembleDebug
+          gradle assembleDebug
     artifacts:
       - app/build/outputs/apk/**/*.apk
