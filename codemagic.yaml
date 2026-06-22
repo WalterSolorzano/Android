@@ -8,10 +8,8 @@ workflows:
         script: |
           wget https://gradle.org -P /tmp
           sudo unzip -d /opt/gradle /tmp/gradle-9.3.1-bin.zip
-          export PATH=/opt/gradle/gradle-9.3.1/bin:$PATH
-          echo "export PATH=/opt/gradle/gradle-9.3.1/bin:\$PATH" >> $CM_ENV
       - name: Build Android APK
         script: | 
-          gradle assembleDebug
+          /opt/gradle/gradle-9.3.1/bin/gradle assembleDebug
     artifacts:
       - app/build/outputs/apk/**/*.apk
