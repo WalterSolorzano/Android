@@ -252,7 +252,16 @@ sealed class Screen(val route: String, val title: String, val icon: ImageVector)
 
 @Composable
 fun UniBuddyApp(viewModel: UniBuddyViewModel) {
+    val isInitialized by viewModel.isInitialized.collectAsStateWithLifecycle()
     val isOnboardingCompleted by viewModel.isOnboardingCompleted.collectAsStateWithLifecycle()
+    
+    if (!isInitialized) {
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
+        }
+        return
+    }
+
     var currentScreen by remember { mutableStateOf<Screen>(Screen.Inicio) }
     
     // Auxiliary state to view subject details (Asistencia)

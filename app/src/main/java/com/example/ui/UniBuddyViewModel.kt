@@ -14,30 +14,39 @@ import java.util.*
 class UniBuddyViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: UniBuddyRepository
 
+    private val _isInitialized = MutableStateFlow(false)
+    val isInitialized: StateFlow<Boolean> = _isInitialized.asStateFlow()
+
     init {
         val db = AppDatabase.getDatabase(application)
         repository = UniBuddyRepository(db)
         
         viewModelScope.launch {
-            // Load settings
-            repository.getSetting("origin")?.let { _origin.value = it }
-            repository.getSetting("destination")?.let { _destination.value = it }
-            repository.getSetting("base_travel_time")?.let { _baseTravelTime.value = it.toIntOrNull() ?: 25 }
-            repository.getSetting("username")?.let { _username.value = it }
-            repository.getSetting("google_maps_api_key")?.let { _googleMapsApiKey.value = it }
-            repository.getSetting("onboarding_completed")?.let { _isOnboardingCompleted.value = it.toBoolean() }
-            repository.getSetting("arrival_margin_preference")?.let { _arrivalMarginPreference.value = it }
-            repository.getSetting("weather_desc")?.let { _weatherDescription.value = it }
-            repository.getSetting("is_raining")?.let { _isRaining.value = it.toBoolean() }
-            repository.getSetting("semester_start_date")?.let { _semesterStartDate.value = it.toLongOrNull() }
-            repository.getSetting("passed_subjects")?.let { _passedSubjects.value = it.split(",").filter { s -> s.isNotEmpty() }.toSet() }
-            
-            // Populate with defaults if empty
-            if (repository.getSetting("onboarding_completed") == null) {
-                prepopulateDatabase()
+            try {
+                // Load settings with individual try-catch to prevent one bad setting from blocking others
+                repository.getSetting("origin")?.let { _origin.value = it }
+                repository.getSetting("destination")?.let { _destination.value = it }
+                try { repository.getSetting("base_travel_time")?.let { _baseTravelTime.value = it.toInt() } } catch(e: Exception) {}
+                repository.getSetting("username")?.let { _username.value = it }
+                repository.getSetting("google_maps_api_key")?.let { _googleMapsApiKey.value = it }
+                try { repository.getSetting("onboarding_completed")?.let { _isOnboardingCompleted.value = it.toBoolean() } } catch(e: Exception) {}
+                repository.getSetting("arrival_margin_preference")?.let { _arrivalMarginPreference.value = it }
+                repository.getSetting("weather_desc")?.let { _weatherDescription.value = it }
+                try { repository.getSetting("is_raining")?.let { _isRaining.value = it.toBoolean() } } catch(e: Exception) {}
+                try { repository.getSetting("semester_start_date")?.let { _semesterStartDate.value = it.toLong() } } catch(e: Exception) {}
+                repository.getSetting("passed_subjects")?.let { _passedSubjects.value = it.split(",").filter { s -> s.isNotEmpty() }.toSet() }
+                
+                // Populate with defaults if empty
+                if (repository.getSetting("onboarding_completed") == null) {
+                    prepopulateDatabase()
+                }
+                
+                refreshWeather()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            } finally {
+                _isInitialized.value = true
             }
-            
-            refreshWeather()
         }
     }
 
