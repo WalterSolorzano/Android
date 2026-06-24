@@ -46,7 +46,7 @@ fun PensumProgressScreen(viewModel: UniBuddyViewModel) {
         // Progress Bar
         Card(
             modifier = Modifier.fillMaxWidth(),
-            colors = CardDefaults.cardColors(containerColor = White),
+            colors = CardDefaults.cardColors(containerColor = Color.White),
             shape = RoundedCornerShape(12.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
         ) {
@@ -91,7 +91,7 @@ fun PensumProgressScreen(viewModel: UniBuddyViewModel) {
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(if (isPassed) Color(0xFFE8F5E9) else White, RoundedCornerShape(8.dp))
+                            .background(if (isPassed) Color(0xFFE8F5E9) else Color.White, RoundedCornerShape(8.dp))
                             .clickable { viewModel.togglePassedSubject(subject.code) }
                             .padding(12.dp),
                         verticalAlignment = Alignment.CenterVertically

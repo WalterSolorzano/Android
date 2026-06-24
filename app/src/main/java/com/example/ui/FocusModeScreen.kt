@@ -38,7 +38,7 @@ fun FocusModeScreen() {
     var completedPomodoros by remember { mutableStateOf(0) }
 
     val bgColor = BackgroundGray
-    val cardColor = White
+    val cardColor = Color.White
     val accentColor = if (isWorkMode) ProBlue else Amber
     val textColor = NavyBlue
 

@@ -652,9 +652,9 @@ fun OnboardingScreen(viewModel: UniBuddyViewModel, onFinished: () -> Unit) {
                         colors = ButtonDefaults.buttonColors(containerColor = NavyBlue),
                         shape = RoundedCornerShape(12.dp)
                     ) {
-                        Text("Empezar", color = White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                        Text("Empezar", color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
                         Spacer(modifier = Modifier.width(8.dp))
-                        Icon(imageVector = Icons.Default.ArrowForward, contentDescription = null, tint = White)
+                        Icon(imageVector = Icons.Default.ArrowForward, contentDescription = null, tint = Color.White)
                     }
                 }
                 2 -> {
@@ -748,7 +748,7 @@ fun OnboardingScreen(viewModel: UniBuddyViewModel, onFinished: () -> Unit) {
                         colors = ButtonDefaults.buttonColors(containerColor = NavyBlue),
                         shape = RoundedCornerShape(12.dp)
                     ) {
-                        Text("Siguiente", color = White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                        Text("Siguiente", color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
                     }
 
                     Spacer(modifier = Modifier.height(12.dp))
@@ -832,7 +832,7 @@ fun OnboardingScreen(viewModel: UniBuddyViewModel, onFinished: () -> Unit) {
 
                     Card(
                         modifier = Modifier.fillMaxWidth(),
-                        colors = CardDefaults.cardColors(containerColor = White),
+                        colors = CardDefaults.cardColors(containerColor = Color.White),
                         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
                         shape = RoundedCornerShape(16.dp)
                     ) {
@@ -943,9 +943,9 @@ fun OnboardingScreen(viewModel: UniBuddyViewModel, onFinished: () -> Unit) {
                                             colors = ButtonDefaults.buttonColors(containerColor = NavyBlue),
                                             shape = RoundedCornerShape(8.dp)
                                         ) {
-                                            Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(18.dp), tint = White)
+                                            Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(18.dp), tint = Color.White)
                                             Spacer(modifier = Modifier.width(8.dp))
-                                            Text("Añadir Materia", fontWeight = FontWeight.Bold, color = White)
+                                            Text("Añadir Materia", fontWeight = FontWeight.Bold, color = Color.White)
                                         }
                                     }
                                 }

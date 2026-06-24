@@ -10,32 +10,32 @@ private val DarkColorScheme = darkColorScheme(
     primary = ProBlue,
     onPrimary = NavyBlue,
     primaryContainer = DeepBlue,
-    onPrimaryContainer = White,
+    onPrimaryContainer = Color.White,
     secondary = DarkGray,
-    onSecondary = White,
+    onSecondary = Color.White,
     background = NavyBlue,
-    onBackground = White,
+    onBackground = Color.White,
     surface = DeepBlue,
-    onSurface = White,
+    onSurface = Color.White,
     error = ProRed,
-    onError = White
+    onError = Color.White
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = NavyBlue,
-    onPrimary = White,
+    onPrimary = Color.White,
     primaryContainer = Color(0xFFD1E4FF),      // Polished Light Blue
     onPrimaryContainer = NavyBlue,
     secondary = DarkGray,
-    onSecondary = White,
+    onSecondary = Color.White,
     background = BackgroundGray,
     onBackground = OnSurfaceDark,
-    surface = White,                            // White cards
+    surface = Color.White,                            // White cards
     onSurface = OnSurfaceDark,                 // High-contrast charcoal text
     surfaceVariant = Color(0xFFF0F4F8),        // Cool slate active gray
     onSurfaceVariant = DarkGray,
     error = ProRed,
-    onError = White
+    onError = Color.White
 )
 
 @Composable
