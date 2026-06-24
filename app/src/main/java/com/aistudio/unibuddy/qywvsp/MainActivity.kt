@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        android.util.Log.d("UniBuddy", "MainActivity onCreate - Version Code: 3, Version Name: 1.2")
+        android.util.Log.d("UniBuddy", "MainActivity onCreate - Version Code: 4, Version Name: 1.3")
         enableEdgeToEdge()
         com.aistudio.unibuddy.qywvsp.ui.NotificationHelper.createNotificationChannel(applicationContext)
         
