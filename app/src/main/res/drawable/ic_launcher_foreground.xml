@@ -1,70 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
     
-    <group android:scaleX="0.75" android:scaleY="0.75" android:pivotX="54" android:pivotY="54">
+    <!-- Safe zone is 66dp centered (from 21 to 87) -->
+    
+    <!-- Bear Head with stroke for visibility -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#E0E0E0"
+        android:strokeWidth="0.5"
+        android:pathData="M54,35c-15,0 -27,12 -27,27v15c0,3 2,5 5,5h44c3,0 5,-2 5,-5v-15c0,-15 -12,-27 -27,-27z" />
+    
+    <!-- Ears with stroke -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#E0E0E0"
+        android:strokeWidth="0.5"
+        android:pathData="M35,35a8,8 0 1,1 -16,0a8,8 0 1,1 16,0z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#E0E0E0"
+        android:strokeWidth="0.5"
+        android:pathData="M89,35a8,8 0 1,1 -16,0a8,8 0 1,1 16,0z" />
         
-        <!-- Helmet Top Ridge -->
-        <path android:fillColor="#F9C74F"
-              android:strokeColor="#00497E" android:strokeWidth="3.0"
-              android:pathData="M 46.4,13 L 61.5,13 L 61.5,26 L 46.4,26 Z" />
-
-        <!-- Left Ear Base -->
-        <path android:fillColor="#FFFFFF"
-              android:strokeColor="#00497E" android:strokeWidth="3.5"
-              android:pathData="M 10.8,27 a 16.2,16.2 0 1,1 32.4,0 a 16.2,16.2 0 1,1 -32.4,0" />
+    <!-- Engineer Helmet (Yellow) -->
+    <path
+        android:fillColor="#FFD600"
+        android:pathData="M30,40c0,-10 10,-18 24,-18s24,8 24,18h-48z" />
+    <path
+        android:fillColor="#FFD600"
+        android:pathData="M25,40h58v4h-58z" /> <!-- Helmet brim -->
         
-        <!-- Left Inner Pink Ear -->
-        <path android:fillColor="#FFB7B2"
-              android:pathData="M 18.4,27 a 8.6,8.6 0 1,1 17.2,0 a 8.6,8.6 0 1,1 -17.2,0" />
-
-        <!-- Right Ear Base -->
-        <path android:fillColor="#FFFFFF"
-              android:strokeColor="#00497E" android:strokeWidth="3.5"
-              android:pathData="M 64.8,27 a 16.2,16.2 0 1,1 32.4,0 a 16.2,16.2 0 1,1 -32.4,0" />
-              
-        <!-- Right Inner Pink Ear -->
-        <path android:fillColor="#FFB7B2"
-              android:pathData="M 72.4,27 a 8.6,8.6 0 1,1 17.2,0 a 8.6,8.6 0 1,1 -17.2,0" />
-
-        <!-- Head Base -->
-        <path android:fillColor="#FFFFFF"
-              android:strokeColor="#00497E" android:strokeWidth="3.5"
-              android:pathData="M 16.2,56.2 a 37.8,37.8 0 1,1 75.6,0 a 37.8,37.8 0 1,1 -75.6,0" />
-
-        <!-- Helmet Base -->
-        <path android:fillColor="#F9C74F"
-              android:strokeColor="#00497E" android:strokeWidth="3.5"
-              android:strokeLineJoin="round"
-              android:pathData="M 19.4,34 A 34.6,17.8 0 0,1 88.6,34 L 91.8,43.2 L 16.2,43.2 Z" />
-
-        <!-- Snout -->
-        <path android:fillColor="#F1EEE5"
-              android:strokeColor="#00497E" android:strokeWidth="2.5"
-              android:pathData="M 44.3,64.2 A 9.7,7.0 0 1,1 63.7,64.2 A 9.7,7.0 0 1,1 44.3,64.2" />
-
-        <!-- Nose -->
-        <path android:fillColor="#00497E"
-              android:pathData="M 49.7,60.5 A 4.3,4.3 0 1,1 58.3,60.5 A 4.3,4.3 0 1,1 49.7,60.5" />
-
-        <!-- Eyes -->
-        <path android:fillColor="#00497E"
-              android:pathData="M 36.1,51.8 a 4.9,4.9 0 1,1 9.8,0 a 4.9,4.9 0 1,1 -9.8,0" />
-        <path android:fillColor="#00497E"
-              android:pathData="M 62.1,51.8 a 4.9,4.9 0 1,1 9.8,0 a 4.9,4.9 0 1,1 -9.8,0" />
-
-        <!-- Highlights -->
-        <path android:fillColor="#FFFFFF"
-              android:pathData="M 36.9,49.7 a 2.0,2.0 0 1,1 4.0,0 a 2.0,2.0 0 1,1 -4.0,0" />
-        <path android:fillColor="#FFFFFF"
-              android:pathData="M 62.8,49.7 a 2.0,2.0 0 1,1 4.0,0 a 2.0,2.0 0 1,1 -4.0,0" />
-
-        <!-- Mouth -->
-        <path android:strokeColor="#00497E" android:strokeWidth="2.5" android:strokeLineCap="round"
-              android:fillColor="#00000000"
-              android:pathData="M 48.6,63.7 Q 54,69.1 59.4,63.7" />
-              
-    </group>
+    <!-- Eyes -->
+    <path
+        android:fillColor="#333333"
+        android:pathData="M44,55a2,2 0 1,1 -4,0a2,2 0 1,1 4,0z" />
+    <path
+        android:fillColor="#333333"
+        android:pathData="M68,55a2,2 0 1,1 -4,0a2,2 0 1,1 4,0z" />
+        
+    <!-- Nose -->
+    <path
+        android:fillColor="#333333"
+        android:pathData="M54,62a3,2 0 1,1 -6,0a3,2 0 1,1 6,0z" />
+        
+    <!-- Smile -->
+    <path
+        android:strokeColor="#333333"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M48,68c2,2 10,2 12,0" />
+        
+    <!-- Waving Paw -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M80,65c3,-3 8,-3 11,0s3,8 0,11l-5,5c-3,3 -8,3 -11,0s-3,-8 0,-11z" />
+        
 </vector>
